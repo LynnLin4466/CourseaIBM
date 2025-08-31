@@ -128,6 +128,26 @@ this is called **boolean indexing**. It works in two steps:
    Pandas **keeps only the rows where the condition is `True`**.
    In this example, it removes rows where `BoosterVersion` equals `"Falcon 1"`.
 
+## 1. Counting with a For Loop
+
+Sometimes you may want to count occurrences without Pandas.  
+You can do this with a simple dictionary and a `for` loop.
+
+```python
+# Example list of mission outcomes
+outcomes = ["True ASDS", "False ASDS", "True RTLS", "True ASDS", "False RTLS"]
+
+# Initialize an empty dictionary
+count_dict = {}
+
+# Loop through the outcomes
+for outcome in outcomes:
+    if outcome in count_dict:
+        count_dict[outcome] += 1
+    else:
+        count_dict[outcome] = 1
+
+print(count_dict)
 
 # Data Quality Assessment
 Data Wrangling
