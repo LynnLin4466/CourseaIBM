@@ -148,6 +148,16 @@ for outcome in outcomes:
         count_dict[outcome] = 1
 
 print(count_dict)
+import pandas as pd
+
+# Example DataFrame
+data = {"Outcome": ["True ASDS", "False ASDS", "True RTLS", "True ASDS", "False RTLS"]}
+df = pd.DataFrame(data)
+
+# Use .value_counts() on the column
+landing_outcomes = df["Outcome"].value_counts()
+
+print(landing_outcomes)
 
 # Data Quality Assessment
 Data Wrangling
